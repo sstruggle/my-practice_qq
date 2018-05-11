@@ -76,7 +76,7 @@ a{text-decoration: none;}
     border:2px solid #ccc;
     border-radius:2px;
     box-shadow:0 0 5px #ccc;
-    background: url(../img/imgdiv.png) no-repeat  center;
+    background: url(./img/imgdiv.png) no-repeat  center;
     display: none;
     position: absolute;
 }
