@@ -15,70 +15,6 @@ $(function(){
     i=0;
  $(".h4cls").data({"n":0});
  $(".h4cls").click(
-    /* 第一种，利用添加或移除class*/
-    /*function(){
-        if($(this).next($(".ul2cls")).hasClass("show")){
-            $(this).next($(".ul2cls")).hide().removeClass("show");   //找到当前h4的同级兄弟ul;
-            $($(this)).css({"color":"#000"});
-            $(this).children().attr({"src":"ico1.gif"});  //找到h4的孩子即img；
-        }
-        else{
-            $(this).next($(".ul2cls")).show().addClass("show");
-            $($(this)).css({"color":"red"});
-            $(this).children().attr({"src":"ico2.gif"});  //找到h4的孩子即img；
-        }
-    }*/
-
-    /*第二种，利用display:none|block； */
-    /*function(){
-        if($(this).next($(".ul2cls")).css("display")=="block"){
-            $(this).next($(".ul2cls")).hide();   //找到当前h4的同级兄弟ul;
-            $($(this)).css({"color":"#000"});
-            $(this).children().attr({"src":"ico1.gif"});  //找到h4的孩子即img；
-        }
-        else{
-            $(this).next($(".ul2cls")).show();
-            $($(this)).css({"color":"red"});
-            $(this).children().attr({"src":"ico2.gif"});  //找到h4的孩子即img；
-        }
-    }*/
-
-    //第三种，有点儿问题！！！
-    /*function(){
-        if(i%2==0){
-            $(this).next($(".ul2cls")).show();
-            $($(this)).css({"color":"red"});
-            $(this).children().attr({"src":"ico2.gif"});
-        }
-        else{
-            $(this).next($(".ul2cls")).hide();   //找到当前h4的同级兄弟ul;
-            $($(this)).css({"color":"#000"});
-            $(this).children().attr({"src":"ico1.gif"});
-        }
-
-        i++;
-    }*/
-
-//第四种，用data();
-    /*function(){
-    n=$(this).data("n");
-    if(n%2==0){
-        $(this).next($(".ul2cls")).show();
-        $($(this)).css({"color":"red"});
-        $(this).children().attr({"src":"ico2.gif"});
-    }else{
-        $(this).next($(".ul2cls")).hide();   //找到当前h4的同级兄弟ul;
-        $($(this)).css({"color":"#000"});
-        $(this).children().attr({"src":"ico1.gif"});
-    }
-    $(this).data({"n":n+1});
-    }
-*/
-
-     //第五种，用toggle();实现h4的显示隐藏效果
-    /*function(){$(this).next($(".ul2cls")).toggle();}*/
-
-
     /*第6种，改进第2步；利用display:none|block； */
     function(){
         d=$(this).next($(".ul2cls")).css("display");
@@ -93,12 +29,7 @@ $(function(){
             $(this).children().attr({"src":"./img/ico2.gif"});  //找到h4的孩子即img；
         }
     }
-
-
-
-
 );
-
 
 /*注意：此处问题是最终获取的当前元素背景颜色是RGB格式的；*/
 //鼠标移入时；
@@ -111,7 +42,6 @@ $(function(){
         $(this).css({"background-color":"#f2f2f2"});
      }
  });
-
 
 //鼠标移出时；
 $(".ul2cls li").mouseleave(function(){
@@ -130,4 +60,16 @@ $(".ul2cls li").click(function(){
         //alert($(this).css("background-color"));  //rgb(102, 102, 102)
  });
 
- });
+//鼠标移入头像上面时，显示另一张图片
+$(".imgcls").mouseenter(function(){
+  x=$(this).position().left-240;
+  y=$(this).position().top;
+  $(".imgbox").show().css({"top":y+"px","left":x+"px"});
+});
+
+//鼠标移开时
+$(".imgcls").mouseleave(function(){
+  $(".imgbox").hide();
+});
+
+});
