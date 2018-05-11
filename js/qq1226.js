@@ -12,7 +12,7 @@ hasClass() 是否存在某个class
  */
 
 $(function(){
-    i=0;
+ i=0;
  $(".h4cls").data({"n":0});
  $(".h4cls").click(
     /*第6种，改进第2步；利用display:none|block； */
