@@ -70,21 +70,4 @@
    </ul>
 </div>
 </body>
-<script>
-$(".imgcls").mouseenter(function(){
-  //x=$(this).offset().left-240;
-  //y=$(this).offset().top;
-  x=$(this).position().left-240;
-  y=$(this).position().top;
-
-  //alert(x+"|"+y);
-  $(".imgbox").show().css({"top":y+"px","left":x+"px"});
-});
-
-$(".imgcls").mouseleave(function(){
-  $(".imgbox").hide();
-});
-
-</script>
-
 </html>
