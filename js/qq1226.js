@@ -64,7 +64,15 @@ $(".ul2cls li").click(function(){
 $(".imgcls").mouseenter(function(){
   x=$(this).position().left-240;
   y=$(this).position().top;
-  $(".imgbox").show().css({"top":y+"px","left":x+"px"});
+ // $(".imgbox").show().css({"top":y+"px","left":x+"px"});
+ //对高度做一个判断，不然最下面的图片显示效果不太好
+ if(y>800){
+    y=840;
+    $(".imgbox").show().css({"top":y+"px","left":x+"px"});
+  }else{
+    y=y;
+    $(".imgbox").show().css({"top":y+"px","left":x+"px"});
+  }
 });
 
 //鼠标移开时
