@@ -83,4 +83,23 @@ window.onload=function() {
             }
         }
     }
+    
+//鼠标移入时的效果；
+$(".imgcls").mouseenter(function(){
+  x=$(this).position().left-240;  //为24,返回当前匹配元素相对于其被定位的祖辈元素的偏移
+  y=$(this).position().top-10;   //有变化
+   if(y>800){
+    y=840;
+    $(".imgbox").show().css({"top":y+"px","left":x+"px"});
+  }else{
+    y=y;
+    $(".imgbox").show().css({"top":y+"px","left":x+"px"});
+  }
+});
+
+//鼠标移出时的效果；
+$(".imgcls").mouseout(function(){
+  $(".imgbox").hide();
+});
+
 }
